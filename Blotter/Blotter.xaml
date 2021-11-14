@@ -1,0 +1,60 @@
+﻿<Window x:Class="Blotter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Blotter"
+        mc:Ignorable="d"
+        Title="Blotter" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical"
+                    Margin="5"
+                    Grid.Column="0">
+            <Border Background="Black"
+                Width="200"
+                Height="30"
+                CornerRadius="3"
+                 Margin="5">
+                <TextBlock Text="Event Data Subscription"
+                   FontSize="15"                   
+                   Foreground="Wheat"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                  />
+            </Border>
+            <DataGrid AutoGenerateColumns="True"
+                  ItemsSource="{Binding EventSubscriptionItems}"
+                 
+                  Margin="5"/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical"
+                    Margin="5"
+                    Grid.Column="1">
+
+            <Border Background="Black"
+                Width="200"
+                Height="30"
+                CornerRadius="3"
+                 Margin="5">
+                <TextBlock Text="Rx Data Subscription"
+                   FontSize="15"                   
+                   Foreground="Wheat"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                  />
+            </Border>
+
+            <DataGrid AutoGenerateColumns="True"
+                  Margin="5"
+                  ItemsSource="{Binding RxSubscriptionItems}" />
+        </StackPanel>
+    </Grid>
+</Window>
